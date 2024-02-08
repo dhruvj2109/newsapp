@@ -1,4 +1,3 @@
-import React from 'react'
 import style from './DaysWeather.module.scss'
 import temp from '../../../assets/Group (1).svg'
 

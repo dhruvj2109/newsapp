@@ -13,12 +13,14 @@ const LatestNews = () => {
 
 		if (scrollTop + clientHeight >= scrollHeight) {
 			dispatch({ type: 'ARTICLE_PAGE_NUMBER', payload: state.articleActivePage + 1 });
-		}
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [state.articleData]);
 
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [state.articleData]);
 
 	return (

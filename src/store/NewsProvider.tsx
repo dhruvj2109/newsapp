@@ -1,6 +1,6 @@
 import { Reducer, useCallback, useEffect, useMemo, useReducer } from 'react';
 import NewsContext, { INewsAction, INewsState, defaultNewsState } from './NewsContext';
-
+import axios from 'axios';
 
 const NewsProvider = (props: any) => {
 	const newsReducer = useCallback((state: INewsState, action: INewsAction) => {
@@ -25,40 +25,42 @@ const NewsProvider = (props: any) => {
 		return { newsUrl: 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=8dbfc93635434e19bd682249796bcefc', weatherUrl: '' };
 	}, []);
 
-	const weatherApi = useCallback(async () => {
-		// const response = await axios.get('https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=Delhi&lon=INDIA&appid=e3d194000019fd67c6b089100de1574b');
-	}, []);
+	// const weatherApi = useCallback(async () => {
+	// 	// const response = await axios.get('https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=Delhi&lon=INDIA&appid=e3d194000019fd67c6b089100de1574b');
+	// }, []);
 
-	useEffect(() => {
-		weatherApi();
-	}, []);
+	// useEffect(() => {
+	// 	weatherApi();
+	// }, []);
 
 	const [newsState, dispatchNewsAction] = useReducer<Reducer<INewsState, INewsAction>, INewsState>(newsReducer, defaultNewsState, initReducer);
 
 	const apiData = useCallback(async () => {
-		// const queryParams = {
-		// 	country: 'us',
-		// 	category: 'business',
-		// 	apiKey: '8dbfc93635434e19bd682249796bcefc',
-		// 	page: newsState.articleActivePage,
-		// 	pageSize: 10
-		// };
-		// if (!newsState.articleData || newsState.newsTotalCount > newsState.articleData?.length) {
-		// 	dispatchNewsAction({ type: 'LOADING_NEWS', payload: true });
-		// 	const response = await axios.get(url.newsUrl, { params: queryParams });
-		// 	try {
-		// 		dispatchNewsAction({ type: 'NEWS_TOTAL_COUNT', payload: response.data.totalResults });
-		// 		dispatchNewsAction({ type: 'ARTICLE_DATA', payload: response?.data.articles });
-		// 	} catch (error) {
-		// 		console.log('error ', error);
-		// 	} finally {
-		// 		dispatchNewsAction({ type: 'LOADING_NEWS', payload: false });
-		// 	}
-		// }
+		const queryParams = {
+			country: 'us',
+			category: 'business',
+			apiKey: '8dbfc93635434e19bd682249796bcefc',
+			page: newsState.articleActivePage,
+			pageSize: 10
+		};
+		if (!newsState.articleData || newsState.newsTotalCount > newsState.articleData?.length) {
+			dispatchNewsAction({ type: 'LOADING_NEWS', payload: true });
+			const response = await axios.get(url.newsUrl, { params: queryParams });
+			try {
+				dispatchNewsAction({ type: 'NEWS_TOTAL_COUNT', payload: response.data.totalResults });
+				dispatchNewsAction({ type: 'ARTICLE_DATA', payload: response?.data.articles });
+			} catch (error) {
+				console.log('error ', error);
+			} finally {
+				dispatchNewsAction({ type: 'LOADING_NEWS', payload: false });
+			}
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [newsState.articleActivePage]);
 
 	useEffect(() => {
 		apiData();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [newsState.articleActivePage]);
 
 	return <NewsContext.Provider value={{ state: newsState, dispatch: dispatchNewsAction }}>{props.children}</NewsContext.Provider>;

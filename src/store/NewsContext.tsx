@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArticleData } from '../components/utils/interface/Article';
+// import { ArticleData } from '../components/utils/interface/Article';
 import articles from '../json/Article.json';
 type INewsActionType = 'ARTICLE_DATA' | 'ARTICLE_PAGE_NUMBER' | 'LOADING_NEWS' | 'NEWS_TOTAL_COUNT';
 

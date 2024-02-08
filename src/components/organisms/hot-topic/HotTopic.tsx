@@ -12,7 +12,7 @@ const HotTopic = () => {
       <div className={styles['topic-cont']}>
           <div className={styles['heading']}><p>Hot Topic</p></div>
           <div className={styles['topic_image']}>
-              <img src={athlete } />
+              <img src={athlete } alt='athlete'/>
           </div>
     </div>
   )
