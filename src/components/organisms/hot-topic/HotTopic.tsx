@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './HotTopic.module.scss'
 // import athlete from '../../../assets/Rectangle 1.png'
 import athlete from '../../../assets/Rectangle 1.svg'
-import axios from 'axios'
+
 
 
 const HotTopic = () => {

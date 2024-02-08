@@ -1,6 +1,6 @@
 import { Reducer, useCallback, useEffect, useMemo, useReducer } from 'react';
 import NewsContext, { INewsAction, INewsState, defaultNewsState } from './NewsContext';
-import axios from 'axios';
+
 
 const NewsProvider = (props: any) => {
 	const newsReducer = useCallback((state: INewsState, action: INewsAction) => {

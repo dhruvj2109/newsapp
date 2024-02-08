@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useLongDateTimeFormat } from '../../hooks/general';
 import styles from './WeatherWidget.module.scss';
 import cloud from '../../../assets/weather_snow_sun.svg';
-import axios from 'axios';
+
 import DaysWeather from '../../atoms/days-weather/DaysWeather';
 
 const WeatherWidget = () => {
