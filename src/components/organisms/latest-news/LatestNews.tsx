@@ -33,7 +33,7 @@ const LatestNews = () => {
 				{state?.articleData?.map((item: ArticleData, index: number) => {
 					return (
 						<div className={styles['box']} key={index}>
-							<img src={item.urlToImage} alt="image" />
+							<img src={item.urlToImage} alt="news" />
 							<p className={styles['desc']}>{item?.title}</p>
 							<p className={styles['time']}>1 Hour ago</p>
 						</div>
