@@ -1,0 +1,35 @@
+.header-cont {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 100px;
+    width: calc(100% - 200px);
+
+    .header-buttons {
+        cursor: pointer;
+        border: none;
+        display: flex;
+        gap: 5px;
+
+        .inactive {
+            border: none;
+            background: white;
+            padding: 5px;
+        }
+
+        .active {
+            background: black;
+            color: white;
+            border: none;
+            padding: 5px;
+
+        }
+
+    }
+
+    .icons {
+        display: flex;
+        gap: 30px;
+
+    }
+
+}

@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import style from './App.module.scss';
+import Header from './components/organisms/header/Header';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import News from './pages/news/News';
+import Portal from './pages/portal/Portal';
+import Footer from './components/organisms/footer/Footer';
+import NewsProvider from './store/NewsProvider';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<NewsProvider>
+			<BrowserRouter>
+				<div className={style['App']}>
+					<Header />
+					<Routes>
+						<Route path="/" element={<News />} />
+						<Route path="/portal" element={<Portal />}></Route>
+					</Routes>
+					<Footer />
+				</div>
+			</BrowserRouter>
+		</NewsProvider>
+	);
 }
 
 export default App;

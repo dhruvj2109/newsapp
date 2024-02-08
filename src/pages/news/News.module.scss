@@ -1,0 +1,20 @@
+.cont {  padding: 0 100px;
+    width: calc(100% - 200px);
+
+
+    
+    .combo {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      
+        
+        .hot-topics {
+            width: 75%;
+        }
+        
+        .weather {
+            flex: 1;
+        }
+    }
+}
