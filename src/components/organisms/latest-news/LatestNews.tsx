@@ -29,17 +29,20 @@ const LatestNews = () => {
 				<p>Latest News</p>
 			</div>
 
+            {state?.articleData ?
 			<div className={styles['description']}>
 				{state?.articleData?.map((item: ArticleData, index: number) => {
-					return (
-						<div className={styles['box']} key={index}>
+                    return (
+                        <div className={styles['box']} key={index}>
 							<img src={item.urlToImage} alt="news" />
 							<p className={styles['desc']}  data-toggle="tooltip" data-placement="top" title={item?.title}>{item?.title}</p>
 							<p className={styles['time']}>1 Hour ago</p>
 						</div>
 					);
 				})}
-            </div>
+                </div>
+                : <p>No Data Found</p>
+            }
           
             <div className={styles['loader']} >
 
