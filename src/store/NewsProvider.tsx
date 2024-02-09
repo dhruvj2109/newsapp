@@ -55,9 +55,7 @@ const NewsProvider = (props: any) => {
 				dispatchNewsAction({ type: 'LOADING_NEWS', payload: false });
 			}
 		}
-		else {
-			
-		}
+
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [newsState.articleActivePage]);
 

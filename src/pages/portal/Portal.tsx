@@ -1,10 +1,9 @@
-import React from 'react'
-
+import styles from './Portal.module.scss'
 const Portal = () => {
     return (
-      <>
-            <h1>This is a Portal Page</h1>
-            </>
+      <div className={styles['portal-cont']}>
+            <h1>No data to show</h1>
+            </div>
   )
 }
 
