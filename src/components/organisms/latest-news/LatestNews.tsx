@@ -2,7 +2,6 @@ import React, { useCallback, useContext, useEffect } from 'react';
 import styles from './LatestNews.module.scss';
 import { ArticleData } from '../../utils/interface/Article';
 import NewsContext from '../../../store/NewsContext';
-import { Spinner } from 'react-bootstrap';
 
 const LatestNews = () => {
 	const { state, dispatch } = useContext(NewsContext);
