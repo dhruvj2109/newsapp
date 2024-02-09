@@ -1,6 +1,89 @@
-.weather-cont {
-    display: flex;
-    justify-content: space-between;
+.cont {
     width: 100%;
-    border: 1px solid green;
+
+    @media screen and (max-width: 390px) {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+        
+    }
+
+    
+    .weather-sub-cont {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        
+        @media screen and (max-width: 390px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .dayes {
+            width: 40%;
+
+            @media screen and (max-width: 390px) {
+                display: flex;
+                justify-content: center;
+                
+            }
+
+        }
+          
+
+            img {
+                width: 10%;
+                display: flex;
+                justify-content: center;
+                width: 10%;
+
+                @media screen and (max-width: 390px) {
+                    width: 50%;
+                    
+                }
+            }
+
+            .temp {
+                width: 40%;
+                display: flex;
+                justify-content: end;
+                gap: 20px;
+
+                @media screen and (max-width: 390px) {
+
+                    width: 0px;
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+
+
+                }
+
+                .first {
+
+                    @media screen and (max-width: 390px) {
+
+                        
+                    }
+
+                }
+
+                .second {
+                    @media screen and (max-width: 390px) {
+                        display: none;
+                        
+                    }
+                }
+
+                
+            }
+
+            
+       
+        
+        
+    }
 }

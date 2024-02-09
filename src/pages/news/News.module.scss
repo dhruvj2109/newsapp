@@ -1,5 +1,12 @@
-.cont {  padding: 0 100px;
+.cont {
+      padding: 0 100px;
     width: calc(100% - 200px);
+
+    @media screen and (max-width: 390px) {
+        padding: 0 50px;
+        width: calc(100% - 100px);
+        
+    }
 
 
     
@@ -7,10 +14,21 @@
         display: flex;
         justify-content: space-between;
         gap: 20px;
+
+        @media screen and (max-width: 390px) {
+            display: flex;
+            flex-direction: column-reverse;
+            
+        }
       
         
         .hot-topics {
             width: 75%;
+
+            @media screen and (max-width: 390px) {
+                width: 100%;
+                
+            }
         }
         
         .weather {

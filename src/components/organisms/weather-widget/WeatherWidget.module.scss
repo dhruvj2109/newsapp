@@ -5,11 +5,18 @@
 
     .heading {
 
+        @media screen and (max-width: 390px) {
+            display: none;
+            
+        }
+
         p {
             margin: 0;
             font-size: 28px;
             font-weight: 700;
-            padding: 25px 0;
+            padding: 10px 0;
+            padding-bottom: 0px;
+            color: #2F80ED;
         }
 
     }
@@ -21,6 +28,13 @@
         padding: 0 20px;
         background: white;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-radius: 10px;
+
+        @media screen and (max-width: 390px) {
+            // width: 100%;
+            display: none;
+            
+        }
 
         p {
             display: flex;

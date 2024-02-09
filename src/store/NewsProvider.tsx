@@ -45,8 +45,8 @@ const NewsProvider = (props: any) => {
 		};
 		if (!newsState.articleData || newsState.newsTotalCount > newsState.articleData?.length) {
 			dispatchNewsAction({ type: 'LOADING_NEWS', payload: true });
-			const response = await axios.get(url.newsUrl, { params: queryParams });
 			try {
+				const response = await axios.get(url.newsUrl, { params: queryParams });
 				dispatchNewsAction({ type: 'NEWS_TOTAL_COUNT', payload: response.data.totalResults });
 				dispatchNewsAction({ type: 'ARTICLE_DATA', payload: response?.data.articles });
 			} catch (error) {
@@ -54,6 +54,9 @@ const NewsProvider = (props: any) => {
 			} finally {
 				dispatchNewsAction({ type: 'LOADING_NEWS', payload: false });
 			}
+		}
+		else {
+			
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [newsState.articleActivePage]);

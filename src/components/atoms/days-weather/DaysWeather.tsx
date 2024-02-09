@@ -2,12 +2,37 @@ import style from './DaysWeather.module.scss'
 import temp from '../../../assets/Group (1).svg'
 
 const DaysWeather = () => {
-  return (
-      <div className={style['weather-cont']}>
-          <p>Thursday</p>
+    return (
+      <div className={style['cont']}>
+            
+      <div className={style['weather-sub-cont']}>
+          <p className={style['dayes']}>Wed</p>
           <img src={temp} alt='cloud' />
-          <p><span>123</span><span>12</span></p>
-    </div>
+                  <p className={style['temp']}><span className={style['first']}>123</span><span className={style['second']}>12</span></p>
+
+            </div>
+            <div className={style['weather-sub-cont']}>
+          <p className={style['dayes']}>Wed</p>
+          <img src={temp} alt='cloud' />
+          <p className={style['temp']}><span className={style['first']}>123</span><span className={style['second']}>12</span></p>
+            </div>
+            <div className={style['weather-sub-cont']}>
+          <p className={style['dayes']}>Fri</p>
+          <img src={temp} alt='cloud' />
+          <p className={style['temp']}><span className={style['first']}>123</span><span className={style['second']}>12</span></p>
+            </div>
+            <div className={style['weather-sub-cont']}>
+          <p className={style['dayes']}>Sat</p>
+          <img src={temp} alt='cloud' />
+          <p className={style['temp']}><span className={style['first']}>123</span><span className={style['second']}>12</span></p>
+            </div>
+            <div className={style['weather-sub-cont']}>
+          <p className={style['dayes']}>Thurs</p>
+          <img src={temp} alt='cloud' />
+          <p className={style['temp']}><span className={style['first']}>123</span><span className={style['second']}>12</span></p>
+            </div>
+           
+      </div>
   )
 }
 

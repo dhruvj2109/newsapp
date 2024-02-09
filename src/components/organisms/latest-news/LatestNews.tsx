@@ -2,6 +2,7 @@ import React, { useCallback, useContext, useEffect } from 'react';
 import styles from './LatestNews.module.scss';
 import { ArticleData } from '../../utils/interface/Article';
 import NewsContext from '../../../store/NewsContext';
+import { Spinner } from 'react-bootstrap';
 
 const LatestNews = () => {
 	const { state, dispatch } = useContext(NewsContext);
@@ -34,13 +35,22 @@ const LatestNews = () => {
 					return (
 						<div className={styles['box']} key={index}>
 							<img src={item.urlToImage} alt="news" />
-							<p className={styles['desc']}>{item?.title}</p>
+							<p className={styles['desc']}  data-toggle="tooltip" data-placement="top" title={item?.title}>{item?.title}</p>
 							<p className={styles['time']}>1 Hour ago</p>
 						</div>
 					);
 				})}
-			</div>
+            </div>
+            <div className={styles['spinner-container']} >
+                <div className={styles['spinner-border']} role="status">
+
+                <span className={styles['visually-hidden']}><Spinner /></span>
+                </div>
+            </div>
+            <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+
 			{state.loadingNews && <p>Loading .... </p>}
+            </div>
 		</div>
 	);
 };

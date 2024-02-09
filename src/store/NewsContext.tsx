@@ -1,10 +1,10 @@
 import React from 'react';
-// import { ArticleData } from '../components/utils/interface/Article';
-import articles from '../json/Article.json';
+import { ArticleData } from '../components/utils/interface/Article';
+
 type INewsActionType = 'ARTICLE_DATA' | 'ARTICLE_PAGE_NUMBER' | 'LOADING_NEWS' | 'NEWS_TOTAL_COUNT';
 
 export type INewsState = {
-	articleData: any; //ArticleData[];
+	articleData: ArticleData[] | null;
 	weatherData: any;
 	articleActivePage: number;
 	loadingNews: boolean;
@@ -16,7 +16,7 @@ export type INewsAction = {
 	payload: any;
 };
 export const defaultNewsState: INewsState = {
-	articleData: articles.articles,
+	articleData: null,
 	weatherData: [],
 	articleActivePage: 1,
 	loadingNews: false,
