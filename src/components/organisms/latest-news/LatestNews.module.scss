@@ -92,6 +92,18 @@
     }
 
 
+    .error-cont {
+        width: 100%;
+
+        .error {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+    }
+
+
 
     .spinner-container {
         width: 100%;

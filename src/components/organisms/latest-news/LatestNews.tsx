@@ -21,7 +21,9 @@ const LatestNews = () => {
 		window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [state.articleData]);
+    }, [state.articleData]);
+    
+    console.log(state?.articleData, "sdcdsfvdf")
 
 	return (
 		<div className={styles['latest_news-cont']}>
@@ -31,7 +33,8 @@ const LatestNews = () => {
 
             {state?.articleData ?
 			<div className={styles['description']}>
-				{state?.articleData?.map((item: ArticleData, index: number) => {
+                    {state?.articleData?.map((item: ArticleData, index: number) => {
+                    console.log(item, "item")
                     return (
                         <div className={styles['box']} key={index}>
 							<img src={item.urlToImage} alt="news" />
@@ -41,7 +44,7 @@ const LatestNews = () => {
 					);
 				})}
                 </div>
-                : <p>No Data Found</p>
+                : <div className={styles['error-cont']}><p className={styles['error']}>No Data Found</p></div>
             }
           
             <div className={styles['loader']} >
