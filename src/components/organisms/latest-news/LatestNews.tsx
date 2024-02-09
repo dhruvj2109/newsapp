@@ -41,13 +41,8 @@ const LatestNews = () => {
 					);
 				})}
             </div>
-            <div className={styles['spinner-container']} >
-                <div className={styles['spinner-border']} role="status">
-
-                <span className={styles['visually-hidden']}><Spinner /></span>
-                </div>
-            </div>
-            <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+          
+            <div className={styles['loader']} >
 
 			{state.loadingNews && <p>Loading .... </p>}
             </div>
